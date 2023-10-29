@@ -31,7 +31,7 @@ test(name, fn);
 test("두 인자를 받아 합을 반환한다", () => {});
 ```
 
-2. `expect`
+2. `expect` - Matcher 함수
 
 ```js
 expect(value)
