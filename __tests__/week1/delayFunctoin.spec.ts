@@ -9,7 +9,7 @@ describe("delayFunction 함수", () => {
     const callback = vi.fn();
 
     // When
-    delayFunction(callback, delay);
+    delayFunction(callback, 1000);
 
     vi.advanceTimersByTime(delay);
     expect(callback).toBeCalled();
@@ -21,7 +21,8 @@ describe("delayFunction 함수", () => {
     const callback = vi.fn();
 
     // When
-    delayFunction(callback, delay);
+    delayFunction(callback, 1000);
+    vi.advanceTimersByTime(delay);
 
     // Then
     expect(callback).not.toBeCalled();
