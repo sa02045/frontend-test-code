@@ -17,3 +17,4 @@
 - add(word) : 단어를 추가한다.
 - remove(word) : 단어를 삭제한다.
 - check(word) : 단어가 있는지 확인한다.
+- length : 단어의 갯수를 반환한다.

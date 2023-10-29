@@ -1,5 +1,6 @@
 import { describe, test, expect } from "vitest";
 import { minus, multiply, divide } from "../../src/week1/calculate";
+import ReactTestUtils from "react-dom/test-utils"; // ES6
 
 describe("calculate 유틸 함수", () => {
   describe("minus 함수", () => {
