@@ -1,21 +1,42 @@
-## 테스트 실행
+- [jsdom](#jsdom)
+- [스냅샷 테스트 - 이전의 결과와 현재의 결과를 비교한다.](#스냅샷-테스트---이전의-결과와-현재의-결과를-비교한다)
+
+## jsdom
+
+<details>
+<summary>jsdom 사용이유</summary>
+
+jsdom은 브라우저 DOM을 서버사이드에서 사용하기 위해 자바스크립트로 구현된 라이브러리이다.
+
+DOM은 원래 `브라우저` 런타임 환경에서 생성되고 동작한다. 그렇기 때문에 `서버사이드` 테스트 환경인 Node.js에는 DOM이 없다. 따라서 DOM이 필요한 테스트를 서버사이드에서 실행하려면 DOM 구현체가 필요하다.
+
+</details>
+
+<details>
+<summary>jsdom의 한계</summary>
+
+**jsdom 한계**
+
+- 브라우저 DOM의 모든 스펙을 구현한 것은 아니다
+- 따라서 브라우저 환경과 다른 부분이 있을 수 있다. ([JSDOM은 진짜 DOM이 아니다](https://ui.toast.com/posts/ko_20220624).)
+
+**jsdom 대체 라이브러리**
+
+- happy-dom (좀 더 빠르나 jsdom보다 DOM 스펙이 덜 구현되어있다.)
+
+</details>
+
+<details>
+<summary>vitest에서 jsdom 설정방법</summary>
+
+vitest.config.js에 추가
 
 ```js
-npm install
-
-npm run test
+test: {
+   environment: "jsdom",
+},
 ```
 
-# 2주차
+</details>
 
-- 배달 앱 컴포넌트 테스트 및 설계하기
-
-1. `Test Utilities`를 사용한 컴포넌트 테스트 및 설계
-2. `testing library`를 사용한 컴포넌트 테스트 및 설계
-   - DOM과 상호작용하는 테스트
-   - user-event를 이용한 테스트
-   - Counter 컴포넌트 테스트하기
-   - Button 컴포넌트 테스트하기
-3. 무엇을 테스트해야할지? (세부구현 사항 vs 기능)
-4. `MSW`를 사용한 API 요청-응답 컴포넌트 테스트 및 설계
-5. 테스트 더블을 사용한 컴포넌트 테스트 및 설계
+## 스냅샷 테스트 - 이전의 결과와 현재의 결과를 비교한다.
