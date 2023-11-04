@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`changes the class when hovered 1`] = `
+<a
+  className="normal"
+  href="http://www.facebook.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Facebook
+</a>
+`;
+
+exports[`changes the class when hovered 2`] = `
+{
+  "instance": null,
+  "nodeType": "component",
+  "props": {
+    "children": "Facebook",
+    "page": "http://www.facebook.com",
+  },
+  "rendered": {
+    "instance": null,
+    "nodeType": "host",
+    "props": {
+      "children": "Facebook",
+      "className": "normal",
+      "href": "http://www.facebook.com",
+      "onMouseEnter": [Function],
+      "onMouseLeave": [Function],
+    },
+    "rendered": [
+      "Facebook",
+    ],
+    "type": "a",
+  },
+  "type": [Function],
+}
+`;
