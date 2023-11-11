@@ -90,3 +90,37 @@ await userEvent.type(input, "안녕하세요");
 const input = screen.getByLabelText("송금") as HTMLInputElement;
 fireEvent.change(input, { target: { value: "12311113" } });
 ```
+
+## 장바구니 페이지 컴포넌트 (Cart Page Component)
+
+<img src="https://tpwebzine.com/page/vol410/img/sub11_06.jpg" width="500"/>
+
+**요구사항**
+
+1. 장바구니에 담긴 메뉴가 없으면 "장바구니가 비었어요"라고 표시해주세요
+2. 메뉴는 최대 3개까지 담을 수 있어요
+3. 배달 또는 포장을 선택할 수 있어요
+
+   - 기본값은 배달이에요
+   - 배달을 선택하면 버튼에 "배달 주문하기" 텍스트가 표시돼요
+   - 포장을 선택하면 버튼에 "포장 주문하기" 텍스트가 표시돼요
+
+4. 메뉴의 수량을 변경할 수 있어요
+
+   - 최소 수량은 1개에요 (-버튼은 disabled 상태가 돼요)
+   - 최대 수량은 10개에요 (+버튼은 disabled 상태가 돼요)
+   - 수량을 변경하면 메뉴의 합계금액과 장바구니의 총 주문금액이 변경돼요
+
+5. 전체삭제 버튼을 누르면 장바구니에 담긴 메뉴가 모두 삭제돼요
+6. `x` 버튼을 누르면 해당 메뉴가 삭제돼요
+
+```ts
+interface Menu {
+  name: string;
+  price: number;
+}
+
+interface Props {
+  menus: Menu[];
+}
+```
