@@ -1,6 +1,6 @@
 import { screen, render, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { Transfer } from "../../Transfer";
+import { Transfer } from "./Transfer";
 import userEvent from "@testing-library/user-event";
 
 describe("Transfer Component", () => {
