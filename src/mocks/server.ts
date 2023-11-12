@@ -1,5 +1,11 @@
 import { setupServer } from "msw/node";
 
-import { http } from "msw";
+import { HttpResponse, http } from "msw";
+import { menus } from "./mockData";
+const handlers = [
+  http.get("/carts", () => {
+    return HttpResponse.json(menus);
+  }),
+];
 
-export const worker = setupServer();
+export const worker = setupServer(...handlers);
