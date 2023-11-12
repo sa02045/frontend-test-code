@@ -124,3 +124,7 @@ interface Props {
   menus: Menu[];
 }
 ```
+
+## STEP1. api 요청없이 Props로 Menus를 전달받는 컴포넌트 작성하기
+
+## STEP2. api 요청을 통해 Menus를 전달받는 컴포넌트 작성하기
