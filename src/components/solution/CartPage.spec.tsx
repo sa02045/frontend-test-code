@@ -1,7 +1,7 @@
 import { screen, render } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { CartPage } from "./CartPage";
+import { CartPage } from "../CartPage";
 import "@testing-library/jest-dom";
 
 const menus = [
