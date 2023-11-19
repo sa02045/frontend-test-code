@@ -1,8 +1,8 @@
 import { renderHook } from "@testing-library/react";
-import { useIsTimeout } from "../useTimeout";
+import { useTimeout } from "../useTimeout";
 import { describe, it, vi } from "vitest";
 
-describe("useIsTimeout", () => {
+describe("useTimeout", () => {
   it("지정한 시간 이전에는 콜백이 호출되지 않는다", () => {
     // when
     const ms = 2000;
@@ -10,7 +10,7 @@ describe("useIsTimeout", () => {
     vi.useFakeTimers();
 
     // given
-    renderHook(() => useIsTimeout(cb, ms));
+    renderHook(() => useTimeout(cb, ms));
     vi.advanceTimersByTime(ms - 1);
 
     // then
@@ -24,7 +24,7 @@ describe("useIsTimeout", () => {
     vi.useFakeTimers();
 
     // given
-    renderHook(() => useIsTimeout(cb, ms));
+    renderHook(() => useTimeout(cb, ms));
     vi.advanceTimersByTime(ms);
 
     // then

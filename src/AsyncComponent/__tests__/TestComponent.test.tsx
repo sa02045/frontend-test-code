@@ -13,6 +13,8 @@ afterAll(() => server.close());
 describe("TestComponent", () => {
   it("renders the text from the server", async () => {
     render(<TestComponent />);
+
+    // findByText는 비동기로 렌더링하는 요소들을 찾을 때 사용한다.
     const text = await screen.findByText("Hello world!");
 
     await waitFor(() => {
