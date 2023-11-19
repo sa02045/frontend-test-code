@@ -2,6 +2,8 @@ import { useNumberController } from "../useNumberController";
 import { renderHook, act } from "@testing-library/react";
 import { describe, it } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
+
 describe("useNumberController", () => {
   // 테스트를 위한 Test컴포넌트를 사용한 테스트
   it("should show default count", () => {
