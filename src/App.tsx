@@ -1,18 +1,15 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
+import { LoginPage } from "./pages/Login";
+import { ProfilePage } from "./pages/Profilepage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <button
-        onClick={() => {
-          setCount((prev) => prev + 1);
-        }}
-      >
-        {count}
-      </button>
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />}></Route>
+      <Route path="/login" element={<LoginPage />}></Route>
+      <Route path="/profile" element={<ProfilePage />}></Route>
+    </Routes>
   );
 }
 
