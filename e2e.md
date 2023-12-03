@@ -26,3 +26,55 @@
 
 - 유저의 로그인 시나리오를 테스트한다.
 - 유저 행동을 기준으로 테스트를 작성한다.
+
+### STEP1. 페이지 방문
+
+```js
+describe("My First Test", () => {
+  it("Visits the Kitchen Sink", () => {
+    cy.visit("https://example.cypress.io");
+  });
+});
+```
+
+### STEP2. 요소 찾기
+
+```js
+describe("My First Test", () => {
+  it('finds the content "type"', () => {
+    cy.visit("https://example.cypress.io");
+
+    cy.contains("type");
+  });
+});
+```
+
+### STEP3. 명령추가
+
+```js
+describe("My First Test", () => {
+  it('clicks the link "type"', () => {
+    cy.visit("https://example.cypress.io");
+
+    cy.contains("type").click();
+  });
+});
+```
+
+### STEP4: 확인하기
+
+```js
+describe("My First Test", () => {
+  it('clicking "type" navigates to a new url', () => {
+    cy.visit("https://example.cypress.io");
+
+    cy.contains("type").click();
+
+    cy.url().should("include", "/commands/actions");
+  });
+});
+```
+
+### testing library API를 사용하기
+
+- https://testing-library.com/docs/cypress-testing-library/intro/
